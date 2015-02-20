@@ -1,0 +1,21 @@
+MAX_CONN_HIGH_WATERMARK = 3
+MAX_THREAD_NUM = 2
+
+tty1> telnet localhost 1234
+GET /courses/2014fa/cs5413/labs/big
+^]
+z
+#Suspends
+tty1> telnet localhost 1234
+GET /courses/2014fa/cs5413/labs/big
+#Works as expected
+
+tty2> telnet localhost 1234
+GET /courses/2014fa/cs5413/labs/small
+#Works as expected
+
+tty3> telnet localhost 1234
+GET /courses/2014fa/cs5413/labs/small
+#Works as expected
+
+--Run all together
